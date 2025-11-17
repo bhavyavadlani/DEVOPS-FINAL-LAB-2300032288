@@ -87,7 +87,7 @@ spec:
     - protocol: TCP
       port: 2000
       targetPort: 2000
-      nodePort: 30071        # Optional fixed NodePort (range 30000–32767)
+      nodePort: 30071        
   type: NodePort
 ---
 # ===========================
@@ -110,12 +110,9 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: bhavyavadlani/2300032288-lab-frontend:latest  # <-- change this
+          image: bhavyavadlani/2300032288-lab-frontend:latest # <-- change this
           ports:
             - containerPort: 80
-          # env:
-          #   - name: VITE_API_URL
-          #     value: "http://localhost:30025"  # Points to backend NodePort
 ---
 apiVersion: v1
 kind: Service
@@ -129,5 +126,5 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30072      # Optional fixed NodePort (range 30000–32767)
+      nodePort: 30072      
   type: NodePort

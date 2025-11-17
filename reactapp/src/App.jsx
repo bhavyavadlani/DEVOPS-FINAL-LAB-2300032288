@@ -56,7 +56,6 @@ function App() {
         setSearchResult(data);
       }
     } catch (err) {
-      console.error(err);
       setSearchResult("NOT_FOUND");
     }
   };
